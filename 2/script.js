@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-        if (typeof window.supabase !== 'undefined' && PAYMENT_CONFIG.SUPABASE.URL) {
+        if (typeof window.supabase !== 'undefined' && typeof PAYMENT_CONFIG !== 'undefined') {
             db = window.supabase.createClient(PAYMENT_CONFIG.SUPABASE.URL, PAYMENT_CONFIG.SUPABASE.ANON_KEY);
-            
-            // Fetch live settings (UPI ID) from DB
+            console.log("Supabase connected for live settings.");
             loadLiveSettings();
+        } else {
+            console.warn("Supabase or Config missing. Using local defaults.");
         }
     } catch (e) {
         console.error("Supabase Init Error:", e);
