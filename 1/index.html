@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tribal Tourism | Explore Iruliga Tribe</title>
+    <meta name="description" content="Discover the rich heritage, traditions, and lifestyle of the Iruliga Tribe. Support tribal welfare through our Virtual Tribal Tourism platform.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://virtualtribaltourism.gcu.ac.in/">
+    <meta property="og:title" content="Virtual Tribal Tourism | Iruliga Tribe">
+    <meta property="og:description" content="Discover the rich heritage and traditions of the Iruliga people. Preservation through tourism.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Virtual Tribal Tourism | Iruliga Tribe">
+    <meta property="twitter:description" content="Experience the tribal heritage of the Iruliga people.">
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Smooth Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+    <!-- On Load Modal Popup -->
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-logos">
+                <img src="gardencitylogo.jpeg" alt="Garden City University">
+                <img src="kscst_eng_logo.jpg" alt="KSCST Logo">
+            </div>
+            <h2>Welcome to Virtual Tribal Tourism</h2>
+            <p>Explore the Iruliga Tribes. Support tribal welfare by donating via the link below. Your contribution helps preserve indigenous culture.</p>
+            <a href="#donate" class="pay-btn btn-clay" onclick="closeModal()">Donate Now</a>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logos">
+                <img src="gardencitylogo.jpeg" alt="GCU Logo">
+                <img src="kscst_eng_logo.jpg" alt="KSCST Logo">
+                <span class="brand-name">Virtual Tribal Tourism</span>
+            </div>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="close-li"><button class="menu-close" onclick="toggleMenu()">&times;</button></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Music</a></li>
+                <li><a href="#explore">Rituals</a></li>
+                <li><a href="#explore">Food</a></li>
+                <li><a href="#explore">Beverages</a></li>
+                <li><a href="#explore">Attire</a></li>
+                <li><a href="#donate" class="donate-btn">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline="playsinline" poster="hero_poster_1776518608253.png" class="bg-video">
+                <source src="intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1>Experience the Rich Heritage <br> of the Iruliga Tribe</h1>
+            <div class="hero-btns">
+                <a href="#explore" class="cta-btn">Explore Now</a>
+                <a href="#donate" class="cta-btn btn-clay">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section id="explore">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Iruliga Way of Life</h2>
+                <p>Immerse yourself in the authentic traditions and wisdom passed down through generations.</p>
+            </div>
+
+            <div class="content-sections">
+                <!-- Tab Controls -->
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="music">Tribal Music</button>
+                    <button class="tab-btn" data-tab="rituals">Tribal Rituals</button>
+                    <button class="tab-btn" data-tab="food">Tribal Food</button>
+                    <button class="tab-btn" data-tab="beverages">Tribal Beverages</button>
+                    <button class="tab-btn" data-tab="attire">Tribal Attire</button>
+                </div>
+
+                <!-- Tab Panels -->
+                <!-- Music -->
+                <div class="tab-panel active" id="music">
+                    <div class="panel-info">
+                        <h3>The Rhythm of the Forest</h3>
+                        <p>Melodic expressions and ancestral songs reflecting the Iruliga spirit.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=KxgH8RIH52U')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/KxgH8RIH52U/maxresdefault.jpg" alt="Music Video 1">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=ZblUk5a-Mts')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/ZblUk5a-Mts/maxresdefault.jpg" alt="Music Video 2">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=W0tQSITfiQo')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/W0tQSITfiQo/maxresdefault.jpg" alt="Music Video 3">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rituals -->
+                <div class="tab-panel" id="rituals">
+                    <div class="panel-info">
+                        <h3>Sacred Ceremonies</h3>
+                        <p>Traditional practices and sacred ceremonies that define the tribal identity.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=I8Hhpqpnipk')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/I8Hhpqpnipk/maxresdefault.jpg" alt="Ritual Video 1">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=6T3RRvg8hGI')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/6T3RRvg8hGI/maxresdefault.jpg" alt="Ritual Video 2">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=xcHV-S2Pcg0')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/xcHV-S2Pcg0/maxresdefault.jpg" alt="Ritual Video 3">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food -->
+                <div class="tab-panel" id="food">
+                    <div class="panel-info">
+                        <h3>Forest-Sourced Culinary Traditions</h3>
+                        <p>Discover the organic and forest-sourced culinary traditions of the Iruliga people.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=WE5OulbdJE4')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/WE5OulbdJE4/maxresdefault.jpg" alt="Food Video 1">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=Liwcz_vRtTM')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/Liwcz_vRtTM/maxresdefault.jpg" alt="Food Video 2">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=8vJJXqzweBc')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/8vJJXqzweBc/maxresdefault.jpg" alt="Food Video 3">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="tab-panel" id="beverages">
+                    <div class="panel-info">
+                        <h3>Traditional Drinks</h3>
+                        <p>Unique traditional drinks and their significance in communal gatherings.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=WE5OulbdJE4')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/WE5OulbdJE4/hqdefault.jpg" alt="Beverage Video 1">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=Liwcz_vRtTM')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/Liwcz_vRtTM/hqdefault.jpg" alt="Beverage Video 2">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attire -->
+                <div class="tab-panel" id="attire">
+                    <div class="panel-info">
+                        <h3>Handcrafted Patterns</h3>
+                        <p>Handcrafted clothing and the stories behind the intricate tribal patterns.</p>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=A-uEJR9XL_c')">
+                            <img loading="lazy" src="https://img.youtube.com/vi/A-uEJR9XL_c/maxresdefault.jpg" alt="Attire Video">
+                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-white">Support the Community</h2>
+                <p class="text-white-op80">Your contributions go directly toward the welfare and development of the Iruliga tribal community.</p>
+            </div>
+            
+            <div class="donation-card">
+                <h3>Donate via UPI</h3>
+                <div class="upi-info">
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=tribal@upi&pn=Virtual%20Tribal%20Tourism" alt="UPI QR Code">
+                    </div>
+                    <div class="upi-id-box">
+                        <span id="upiIdText">tribal@upi</span>
+                        <button class="copy-btn" onclick="copyUPI()">Copy ID</button>
+                    </div>
+                </div>
+                <p class="mb-25">Preserving the heritage by empowering the people.</p>
+                <a href="upi://pay?pa=tribal@upi&pn=Virtual%20Tribal%20Tourism" class="pay-btn">Pay via UPI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="gardencitylogo.jpeg" alt="GCU Logo">
+                        <img src="kscst_eng_logo.jpg" alt="KSCST Logo">
+                    </div>
+                    <p>This platform is an initiative under the Student Project Proposal (SPP), supported by Karnataka State Council for Science and Technology (KSCST).</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#food">Tribal Food</a></li>
+                        <li><a href="#attire">Tribal Attire</a></li>
+                        <li><a href="#music">Tribal Music</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 Virtual Tribal Tourism. All Rights Reserved. <br>
+                <span>Rights reserved by Garden City University.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+</html>
