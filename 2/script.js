@@ -6,6 +6,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 0. Initialize Supabase (Using window.supabase to avoid shadowing)
     let db = null;
+    let LIVE_SETTINGS = {
+        upi_id: null,
+        upi_name: null
+    };
+
     try {
         if (typeof window.supabase !== 'undefined' && PAYMENT_CONFIG.SUPABASE.URL) {
             db = window.supabase.createClient(PAYMENT_CONFIG.SUPABASE.URL, PAYMENT_CONFIG.SUPABASE.ANON_KEY);
@@ -25,14 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             data.forEach(s => {
                 if (s.id === 'upi_id') {
-                    // Update global config object
-                    PAYMENT_CONFIG.LOCAL_UPI_ID = s.value;
-                    // Update UI if already rendered
+                    LIVE_SETTINGS.upi_id = s.value;
+                    // Update UI text display
                     const upiText = document.getElementById('upiIdText');
                     if (upiText) upiText.innerText = s.value;
                 }
                 if (s.id === 'upi_name') {
-                    PAYMENT_CONFIG.LOCAL_UPI_NAME = s.value;
+                    LIVE_SETTINGS.upi_name = s.value;
                 }
             });
         } catch (e) {
@@ -316,8 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.openPaymentApp = () => {
         // Use live settings from DB if available, otherwise fallback to config
-        const upiId = PAYMENT_CONFIG.LOCAL_UPI_ID || PAYMENT_CONFIG.UPI.ID;
-        const upiName = PAYMENT_CONFIG.LOCAL_UPI_NAME || PAYMENT_CONFIG.UPI.NAME;
+        const upiId = LIVE_SETTINGS.upi_id || PAYMENT_CONFIG.UPI.ID;
+        const upiName = LIVE_SETTINGS.upi_name || PAYMENT_CONFIG.UPI.NAME;
 
         const amountField = document.getElementById('customAmountInput');
         const amount = (amountField && amountField.style.display === 'block') 
